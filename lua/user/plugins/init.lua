@@ -11,9 +11,6 @@
 vim.cmd [[packadd packer.nvim]]
 local packer = require('packer')
 
-vim.cmd [[packadd packer.nvim]]
-local packer = require('packer')
-
 packer.startup(function()
   use 'wbthomason/packer.nvim'
 
@@ -40,7 +37,7 @@ packer.startup(function()
     requires = { 'nvim-tree/nvim-web-devicons' }, -- Iconos opcionales para archivos
     config = function()
       require('user.plugins.nvim-tree')  -- Cargar la configuración de nvim-tree
-    end
+   end
   }
 
     -- lualine - Barra de estado personalizada
@@ -52,19 +49,22 @@ packer.startup(function()
     end
   }
   
-    -- Dashboard-nvim - Pagina de Inicio vim custom
-  use {
-    'nvimdev/dashboard-nvim',           
-    config = function()
-      require('user.ui.dashboard')       -- Cargar config
-    end,
-    requires = { 'nvim-tree/nvim-web-devicons' } -- Iconos 
-  }
-
-  -- Telescope - búsqueda avanzada
+   -- Telescope - búsqueda avanzada
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }  -- Dependencia
   }
-end)
 
+  use {
+    'goolord/alpha-nvim',
+    requires = {
+        'nvim-tree/nvim-web-devicons',
+        'echasnovski/mini.icons',
+        'nvim-lua/plenary.nvim',
+    },
+    config = function ()
+	require'alpha'.setup(require'alpha.themes.dashboard'.config)
+	require('user.ui.dashboard')
+    end
+}
+end)

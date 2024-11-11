@@ -26,3 +26,5 @@ require("user.ui.statusline")      -- Statusline configuration
 -- Utilities
 require("user.utils.commands")     -- Custom commands
 require("user.utils.functions")    -- Custom helper functions
+
+

@@ -1,21 +1,33 @@
--- lua/user/ui/dashboard.lua
+local alpha = require('alpha')
+local dashboard = require('alpha.themes.dashboard')
+local Path = require('plenary.path')
 
-local db = require('dashboard')
 
--- Configura el header (opcional)
-db.custom_header = {
-  "Bienvenido a Neovim",
-  "Let's code something awesome!",
+
+dashboard.section.header.val = {
+    [[███╗   ██╗███████╗███╗   ███╗ ██████╗  ██████╗   ██╗   ██╗██╗███╗   ███╗]],
+    [[████╗  ██║██╔════╝████╗ ████║██╔═══██╗██╔═══██╗  ██║   ██║██║████╗ ████║]],
+    [[██╔██╗ ██║█████╗  ██╔████╔██║██║   ██║██║   ██║  ██║   ██║██║██╔████╔██║]],
+    [[██║╚██╗██║██╔══╝  ██║╚██╔╝██║██║   ██║██║   ██║  ███  ███║██║██║╚██╔╝██║]],
+    [[██║ ╚████║███████╗██║ ╚═╝ ██║╚██████╔╝╚██████╔╝  ╚██████╔╝██║██║ ╚═╝ ██║]],
+    [[╚═╝  ╚═══╝╚══════╝╚═╝     ╚═╝ ╚═════╝  ╚═════╝    ╚═██══╝ ╚═╝╚═╝     ╚═╝]],
 }
 
--- Accesos rápidos
-db.custom_center = {
-  { icon = "  ", desc = "Nuevo archivo               ", action = "enew" },
-  { icon = "  ", desc = "Recientes                   ", action = "Telescope oldfiles" },
-  { icon = "  ", desc = "Buscar archivo              ", action = "Telescope find_files" },
-  { icon = "  ", desc = "Buscar texto                ", action = "Telescope live_grep" },
+
+
+-- Set menu
+-- You can customize the menu to include commands you use frequently
+dashboard.section.buttons.val = {
+    dashboard.button("e", "  New file" , "<cmd>ene <BAR> startinsert <CR>"),
+    dashboard.button("f", "󰮗  Find file", "<cmd>Telescope find_files<CR>"),
+    dashboard.button("r", "  Recent files", "<cmd>Telescope oldfiles<CR>"),
+    dashboard.button("s", "⚙️  Settings", "<cmd>e $MYVIMRC<CR>"),
+    dashboard.button("u", "  Update plugins", "<cmd>PackerSync<CR>"),
+    dashboard.button("q", "󰩈  Quit", "<cmd>qa<CR>"),
 }
 
--- Configura el footer (opcional)
-db.custom_footer = { "Neovim powered by packer.nvim and dashboard-nvim" }
-
+-- Set footer
+-- You can add a custom footer message here
+dashboard.section.footer.val = {
+    "el nemo cmamo",
+}
