@@ -1,19 +1,23 @@
 -- lua/user/plugins/init.lua
 
--- Load and initialize packer
+--    ____  __            _               __  __         __  __
+--   / __ \/ /_  ______ _(_)___  _____   / / / /      __/ / / /
+--  / /_/ / / / / / __ `/ / __ \/ ___/  / / / / | /| / / / / /
+-- / ____/ / /_/ / /_/ / / / / (__  )  / /_/ /| |/ |/ / /_/ /
+--/_/   /_/\__,_/\__, /_/_/ /_/____/   \____/ |__/|__/\____/
+----             /____/
+
+-- initialize packer
 vim.cmd [[packadd packer.nvim]]
 local packer = require('packer')
--- lua/user/plugins/init.lua
 
--- Asegúrate de que packer esté cargado
 vim.cmd [[packadd packer.nvim]]
 local packer = require('packer')
 
 packer.startup(function()
-  -- Packer se gestiona a sí mismo
   use 'wbthomason/packer.nvim'
 
-  -- Tema Gruvbox optimizado para Neovim
+  -- Gruvbox - Tema
   use {
     'sainnhe/gruvbox-material',
     config = function()
@@ -21,16 +25,16 @@ packer.startup(function()
     end
   }
 
-  -- Treesitter para resaltado de sintaxis avanzado
+  -- Treesitter - resaltado de sintaxis avanzado
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',  -- Actualiza los parsers después de la instalación
+    run = ':TSUpdate',  -- Actualiza luego de instalar
     config = function()
-      require('user.plugins.treesitter')  -- Carga la configuración de Treesitter
+      require('user.plugins.treesitter')  -- config file en el directorio
     end
   }
 	
-  -- Explorador de archivos
+  -- Nvim-tree - Explorador de archivos
   use {
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons' }, -- Iconos opcionales para archivos
@@ -39,14 +43,28 @@ packer.startup(function()
     end
   }
 
-    -- Barra de estado personalizada
+    -- lualine - Barra de estado personalizada
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- Iconos opcionales
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- Iconos
     config = function()
-      require('user.plugins.lualine')    -- Cargar la configuración de lualine
+      require('user.plugins.lualine')    -- Cargar la config
     end
   }
+  
+    -- Dashboard-nvim - Pagina de Inicio vim custom
+  use {
+    'nvimdev/dashboard-nvim',           
+    config = function()
+      require('user.ui.dashboard')       -- Cargar config
+    end,
+    requires = { 'nvim-tree/nvim-web-devicons' } -- Iconos 
+  }
 
+  -- Telescope - búsqueda avanzada
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }  -- Dependencia
+  }
 end)
 

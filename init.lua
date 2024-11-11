@@ -17,6 +17,8 @@ require("user.plugins.completion") -- Completion settings
 require("user.plugins.nvim-tree")
 require("user.plugins.other_plugin") -- Any other specific plugin configurations
 require("user.plugins.lualine") 
+require("user.plugins.telescope") 
+
 -- UI
 require("user.ui.dashboard")       -- Dashboard setup
 require("user.ui.statusline")      -- Statusline configuration
