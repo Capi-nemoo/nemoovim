@@ -1,7 +1,8 @@
 -- lua/user/plugins/nvim-tree.lua
 
+-- Configuración de nvim-tree
 require('nvim-tree').setup {
-  -- Desactiva netrw para evitar conflictos
+  -- Desactiva netrw al iniciar Neovim
   disable_netrw = true,
   hijack_netrw = true,
 
@@ -20,14 +21,12 @@ require('nvim-tree').setup {
     },
   },
 
-  open_on_tab = true,         -- Abrir nvim-tree en una nueva pestaña
-
   -- Configuración del comportamiento de actualización
   update_focused_file = {
     enable = true,
     update_cwd = true,
   },
-  -- Ignorar archivos ocultos (dotfiles) al abrir el explorador
+  -- Ignorar archivos al abrir el explorador
   filters = {
     dotfiles = false,       -- Cambia a true para ocultar archivos ocultos
   },
