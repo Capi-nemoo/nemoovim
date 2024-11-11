@@ -4,7 +4,8 @@ This is my custom configuration for Neovim (Nemoovim). The Idea is to make it as
 
 Project Structure
 
-```bash
+```
+
 ~/.config/nvim/
 ├── init.lua                # Main entry point
 └── lua/
@@ -29,20 +30,22 @@ Project Structure
 ```
 
 
-Script to Create the Directory Structure
+This Script is to Create the Directory Structure
 
-Run the following command in the terminal to automatically create the full structure:
-
+```
 mkdir -p ~/.config/nvim/lua/user/{core,plugins,ui,utils}
 touch ~/.config/nvim/init.lua \
       ~/.config/nvim/lua/user/core/{options.lua,keymaps.lua,autocmds.lua,colorscheme.lua} \
       ~/.config/nvim/lua/user/plugins/{init.lua,lsp.lua,treesitter.lua,completion.lua,other_plugin.lua} \
       ~/.config/nvim/lua/user/ui/{statusline.lua,dashboard.lua} \
       ~/.config/nvim/lua/user/utils/{functions.lua,commands.lua}
+```
+## Main Features
 
-Main Features
+    - Core: Basic settings, including options, keymaps, autocommands, and colors.
 
-    Core: Basic settings, including options, keymaps, autocommands, and colors.
-    Plugins: Organized plugin setup for essentials like LSP, Treesitter, autocompletion, and more.
-    UI: UI customization, including status line and start screen.
-    Utils: Additional functions and commands for optimizing workflow.
+    - Plugins: Organized plugin setup  (LSP, Treesitter, autocompletion)
+
+    - UI: UI customization, including status line and start screen.
+
+    - Utils: Additional functions and commands for optimizing workflow.
