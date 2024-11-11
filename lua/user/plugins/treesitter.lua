@@ -1,5 +1,14 @@
 -- lua/user/plugins/nvim-tree.lua
+--
+-- _                 ____  _ _   _
+--| |_ _ __ ___  ___/ ___|(_) |_| |_ ___ _ __
+--| __| '__/ _ \/ _ \___ \| | __| __/ _ \ '__|
+--| |_| | |  __/  __/___) | | |_| ||  __/ |
+-- \__|_|  \___|\___|____/|_|\__|\__\___|_|
+--
 
+--arbol visulizador de archivantes relevantes
+--
 require('nvim-tree').setup {
   -- Desactiva netrw para evitar conflictos
   disable_netrw = true,

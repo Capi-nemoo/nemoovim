@@ -1,5 +1,11 @@
 -- lua/user/plugins/nvim-tree.lua
 
+---           _                 _
+-- _ ____   _(_)_ __ ___       | |_ _ __ ___  ___
+--| '_ \ \ / / | '_ ` _ \ _____| __| '__/ _ \/ _ \
+--| | | \ V /| | | | | | |_____| |_| | |  __/  __/
+--|_| |_|\_/ |_|_| |_| |_|      \__|_|  \___|\___|
+
 -- Configuración de nvim-tree
 require('nvim-tree').setup {
   -- Desactiva netrw al iniciar Neovim
