@@ -29,13 +29,22 @@ packer.startup(function()
       require('user.plugins.treesitter')  -- Carga la configuración de Treesitter
     end
   }
-
-	  -- Explorador de archivos
+	
+  -- Explorador de archivos
   use {
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons' }, -- Iconos opcionales para archivos
     config = function()
       require('user.plugins.nvim-tree')  -- Cargar la configuración de nvim-tree
+    end
+  }
+
+    -- Barra de estado personalizada
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- Iconos opcionales
+    config = function()
+      require('user.plugins.lualine')    -- Cargar la configuración de lualine
     end
   }
 
