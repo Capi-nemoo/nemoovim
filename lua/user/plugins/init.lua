@@ -1,5 +1,5 @@
 -- lua/user/plugins/init.lua
-
+----------------------------------------------------------------------------------------------
 --    ____  __            _               __  __         __  __
 --   / __ \/ /_  ______ _(_)___  _____   / / / /      __/ / / /
 --  / /_/ / / / / / __ `/ / __ \/ ___/  / / / / | /| / / / / /
@@ -14,7 +14,7 @@ local packer = require('packer')
 packer.startup(function()
   use 'wbthomason/packer.nvim'
 
-  -- Gruvbox - Tema
+  -- Gruvbox - color Tema
   use {
     'sainnhe/gruvbox-material',
     config = function()
@@ -55,6 +55,7 @@ packer.startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }  -- Dependencia
   }
 
+  -- Dashboard - Pagina "home"
   use {
     'goolord/alpha-nvim',
     requires = {

@@ -1,5 +1,5 @@
 -- lua/user/core/keymaps.lua
-
+----------------------------------------------------------------------------------------------
 --   ____ _   __(_)___ ___      /_  __/_______  ___
 --  / __ \ | / / / __ `__ \______/ / / ___/ _ \/ _ \
 -- / / / / |/ / / / / / / /_____/ / / /  /  __/  __/
@@ -8,6 +8,7 @@
 -- abrir/cerrar el explorador 
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
+----------------------------------------------------------------------------------------------
 -- ______     __
 --/_  __/__  / /__  ______________  ____  ___
 --  / / / _ \/ / _ \/ ___/ ___/ __ \/ __ \/ _ \
@@ -26,4 +27,6 @@ vim.api.nvim_set_keymap('n', '<leader>fr', ':Telescope oldfiles<CR>', { noremap 
 
 -- Buscar buffers abiertos
 vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })
+
+---------------------------------------------------------------------------------------------
 
