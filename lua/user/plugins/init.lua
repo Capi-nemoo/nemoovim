@@ -45,7 +45,7 @@ packer.startup(function()
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- Iconos
     config = function()
-      require('user.plugins.lualine')    -- Cargar la config
+      require('user.ui.lualine')    -- Cargar la config
     end
   }
   

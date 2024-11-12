@@ -16,12 +16,12 @@ require("user.plugins.treesitter") -- Treesitter configuration
 require("user.plugins.completion") -- Completion settings
 require("user.plugins.nvim-tree")
 require("user.plugins.other_plugin") -- Any other specific plugin configurations
-require("user.plugins.lualine") 
 require("user.plugins.telescope") 
 
 -- UI
 require("user.ui.dashboard")       -- Dashboard setup
 require("user.ui.statusline")      -- Statusline configuration
+require("user.ui.lualine") 
 
 -- Utilities
 require("user.utils.commands")     -- Custom commands
