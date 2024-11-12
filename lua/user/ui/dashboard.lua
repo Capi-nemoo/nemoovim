@@ -20,12 +20,13 @@ dashboard.section.buttons.val = {
     dashboard.button("e", "  New file" , "<cmd>ene <BAR> startinsert <CR>"),
     dashboard.button("f", "󰮗  Find file", "<cmd>Telescope <CR>"),
     dashboard.button("r", "  Recent files", "<cmd>Telescope oldfiles<CR>"),
-    dashboard.button("p", "  Projects", "<cmd>lua require('telescope.builtin').find_files({ cwd = '~/repos', prompt_title = 'Projects', find_command = { 'find', '.', '-mindepth', '1', '-maxdepth', '1', '-type', 'd' } })<CR>"),
-    dashboard.button("p", "📁  Git Repositories", "<cmd>lua require('telescope.builtin').find_files({ cwd = '~/repos', prompt_title = 'Git Repositories', find_command = { 'find', '.', '-mindepth', '1', '-maxdepth', '1', '-type', 'd', '-exec', 'test', '-e', '{}/.git', ';', '-print' } })<CR>"),
-    dashboard.button("p", "📁  Git Repositories (Global)", "<cmd>lua require('telescope.builtin').find_files({ prompt_title = 'Git Repositories', find_command = { 'find', '/', '-type', 'd', '-name', '.git', '-prune', '-exec', 'dirname', '{}', ';' } })<CR>"),
+    dashboard.button("p", "   Git Repositories", "<cmd>lua require('telescope.builtin').find_files({ cwd = '~/repos', prompt_title = 'Git Repositories', find_command = { 'find', '.', '-mindepth', '1', '-maxdepth', '1', '-type', 'd', '-exec', 'test', '-e', '{}/.git', ';', '-print' } })<CR>"),
+    dashboard.button("p", " 󰳏 Git Repositories (Global)", "<cmd>lua require('telescope.builtin').find_files({ prompt_title = 'Git Repositories', find_command = { 'find', '/', '-type', 'd', '-name', '.git', '-prune', '-exec', 'dirname', '{}', ';' } })<CR>"),
     dashboard.button("s", "⚙️  Settings", "<cmd>Telescope find_files<CR>"),
     dashboard.button("u", "  Update plugins", "<cmd>PackerSync<CR>"),
+    dashboard.button("c", "  Check Heath", "<cmd>checkhealth<CR>"),
     dashboard.button("q", "󰩈  Quit", "<cmd>qa<CR>"),
+
 }
 
 -- Set footer
@@ -35,3 +36,6 @@ dashboard.section.footer.val = {
 }
 
 alpha.setup(dashboard.config)
+
+-- projects in repo folder(deprecated)
+-- dashboard.button("p", "  Projects", "<cmd>lua require('telescope.builtin').find_files({ cwd = '~/repos', prompt_title = 'Projects', find_command = { 'find', '.', '-mindepth', '1', '-maxdepth', '1', '-type', 'd' } })<CR>"),
