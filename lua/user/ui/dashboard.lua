@@ -11,9 +11,6 @@ dashboard.section.header.val = {
     [[╚═╝  ╚═══╝╚══════╝╚═╝     ╚═╝ ╚═════╝  ╚═════╝    ╚═██══╝ ╚═╝╚═╝     ╚═╝]],
 }
 
-
-
-
 -- Set menu
 -- You can customize the menu to include commands you use frequently
 dashboard.section.buttons.val = {
