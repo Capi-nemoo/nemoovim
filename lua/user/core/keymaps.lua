@@ -8,6 +8,9 @@
 vim.g.mapleader = ' '  -- Leader key is Space
 vim.api.nvim_set_keymap('n', '<Space>', '<Nop>', { noremap = true, silent = true })  -- Disable Space default action
 
+-- Use <leader>t to quickly open or close a terminal window.
+vim.api.nvim_set_keymap('n', '<leader>t', ':ToggleTerm<CR>', { noremap = true, silent = true })
+
 -- Clear search highlights
 vim.api.nvim_set_keymap('n', '<leader>nh', ':nohlsearch<CR>', { noremap = true, silent = true })  -- Clear search
 

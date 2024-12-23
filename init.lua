@@ -20,6 +20,7 @@ require("user.plugins.telescope")
 
 -- UI
 require("user.ui.dashboard")       -- Dashboard setup
+require("user.ui.colorscheme_picker")
 require("user.ui.statusline")      -- Statusline configuration
 require("user.ui.lualine") 
 
