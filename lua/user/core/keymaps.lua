@@ -1,32 +1,50 @@
 -- lua/user/core/keymaps.lua
+-- Keybindings for Neovim
+-- This file contains mappings to improve usability and workflow.
 ----------------------------------------------------------------------------------------------
---   ____ _   __(_)___ ___      /_  __/_______  ___
---  / __ \ | / / / __ `__ \______/ / / ___/ _ \/ _ \
--- / / / / |/ / / / / / / /_____/ / / /  /  __/  __/
---/_/ /_/|___/_/_/ /_/ /_/     /_/ /_/   \___/\___/
 
--- abrir/cerrar el explorador 
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+-- GENERAL CONFIGURATIONS
+-- Set <Space> as the leader key
+vim.g.mapleader = ' '  -- Leader key is Space
+vim.api.nvim_set_keymap('n', '<Space>', '<Nop>', { noremap = true, silent = true })  -- Disable Space default action
+
+-- Clear search highlights
+vim.api.nvim_set_keymap('n', '<leader>nh', ':nohlsearch<CR>', { noremap = true, silent = true })  -- Clear search
 
 ----------------------------------------------------------------------------------------------
--- ______     __
---/_  __/__  / /__  ______________  ____  ___
---  / / / _ \/ / _ \/ ___/ ___/ __ \/ __ \/ _ \
--- / / /  __/ /  __(__  ) /__/ /_/ / /_/ /  __/
---/_/  \___/_/\___/____/\___/\____/ .___/\___/
---                               /_/
+-- NAVIGATION
+-- Move between splits using <leader>h/j/k/l
+vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', { noremap = true, silent = true })  -- Move to the left split
+vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>j', { noremap = true, silent = true })  -- Move to the split below
+vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', { noremap = true, silent = true })  -- Move to the split above
+vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', { noremap = true, silent = true })  -- Move to the right split
 
--- Abrir Telescope para buscar archivos
-vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
+----------------------------------------------------------------------------------------------
+-- NVIM-TREE (PLUGIN)
+-- Open/close the file explorer
+vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })  -- Toggle NvimTree
 
--- Buscar texto dentro del proyecto
-vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+----------------------------------------------------------------------------------------------
+-- TELESCOPE (PLUGIN)
+-- Open Telescope to find files
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })  -- Find files
 
--- Buscar archivos recientes
-vim.api.nvim_set_keymap('n', '<leader>fr', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
+-- Search for text within the project
+vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })  -- Search text
 
--- Buscar buffers abiertos
-vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })
+-- Search for recently opened files
+vim.api.nvim_set_keymap('n', '<leader>fr', ':Telescope oldfiles<CR>', { noremap = true, silent = true })  -- Recent files
 
----------------------------------------------------------------------------------------------
+-- List currently open buffers
+vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })  -- Open buffers
+
+----------------------------------------------------------------------------------------------
+-- COMMENT TOGGLE (OPTIONAL PLUGIN)
+-- Uncomment this section if you have a comment plugin installed like `Comment.nvim`
+-- Toggle comments in normal and visual modes
+-- vim.api.nvim_set_keymap('n', '<leader>/', ':CommentToggle<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('v', '<leader>/', ':CommentToggle<CR>gv', { noremap = true, silent = true })
+----------------------------------------------------------------------------------------------
+
+-- END OF CONFIGURATION
 
