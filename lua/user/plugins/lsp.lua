@@ -6,3 +6,6 @@
 --|_____|____/|_|
 
 -- Language Server Protocol (LSP)
+
+
+-- Puedes agregar más configuraciones de servidores LSP aquí según el lenguaje que uses

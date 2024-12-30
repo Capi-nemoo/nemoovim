@@ -14,6 +14,7 @@ local packer = require('packer')
 packer.startup(function()
   use 'wbthomason/packer.nvim'
 
+
   -- Gruvbox - color Tema
   use {
     'sainnhe/gruvbox-material',
@@ -40,6 +41,10 @@ packer.startup(function()
    end
   }
 
+  use {
+  'neovim/nvim-lspconfig', -- Configuración básica para LSP
+  }
+
     -- lualine - Barra de estado personalizada
   use {
     'nvim-lualine/lualine.nvim',
@@ -54,6 +59,24 @@ packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }  -- Dependencia
   }
+
+  --- Autocompletion paths
+  use {
+  'hrsh7th/nvim-cmp',
+  requires = {
+    'hrsh7th/cmp-path', -- Fuente para rutas
+    'hrsh7th/cmp-nvim-lsp', -- Fuente para LSP
+    'hrsh7th/cmp-buffer', -- Fuente para buffers
+  }
+}
+
+  use({
+  'barrett-ruth/live-server.nvim',
+  run = 'npm install -g live-server',
+  config = function()
+    require('live-server').setup()
+  end
+})
 
   -- Dashboard - Pagina "home"
   use {

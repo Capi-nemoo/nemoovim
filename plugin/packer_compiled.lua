@@ -80,11 +80,32 @@ _G.packer_plugins = {
     path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
   ["gruvbox-material"] = {
     config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26user.core.colorscheme\frequire\0" },
     loaded = true,
     path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
+  },
+  ["live-server.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16live-server\frequire\0" },
+    loaded = true,
+    path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/live-server.nvim",
+    url = "https://github.com/barrett-ruth/live-server.nvim"
   },
   ["lualine.nvim"] = {
     config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20user.ui.lualine\frequire\0" },
@@ -96,6 +117,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/mini.icons",
     url = "https://github.com/echasnovski/mini.icons"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/capinemoo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27user.plugins.nvim-tree\frequire\0" },
@@ -132,14 +163,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: live-server.nvim
+time([[Config for live-server.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16live-server\frequire\0", "config", "live-server.nvim")
+time([[Config for live-server.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27user.plugins.nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-try_loadstring("\27LJ\2\n\127\0\0\5\0\6\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\0016\0\0\0'\2\5\0B\0\2\1K\0\1\0\22user.ui.dashboard\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
-time([[Config for alpha-nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20user.ui.lualine\frequire\0", "config", "lualine.nvim")
@@ -152,6 +183,10 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for gruvbox-material]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26user.core.colorscheme\frequire\0", "config", "gruvbox-material")
 time([[Config for gruvbox-material]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\n\127\0\0\5\0\6\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\0016\0\0\0'\2\5\0B\0\2\1K\0\1\0\22user.ui.dashboard\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

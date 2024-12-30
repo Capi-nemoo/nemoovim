@@ -14,6 +14,8 @@ vim.api.nvim_set_keymap('n', '<leader>t', ':ToggleTerm<CR>', { noremap = true, s
 -- Clear search highlights
 vim.api.nvim_set_keymap('n', '<leader>nh', ':nohlsearch<CR>', { noremap = true, silent = true })  -- Clear search
 
+-- Use Ctrl+s to save a file 
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------
 -- NAVIGATION
 -- Move between splits using <leader>h/j/k/l
