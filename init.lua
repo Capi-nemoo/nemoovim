@@ -17,7 +17,6 @@ require("user.plugins.completion") -- Completion settings
 require("user.plugins.nvim-tree")
 require("user.plugins.other_plugin") -- Any other specific plugin configurations
 require("user.plugins.telescope") 
-require("user.plugins.gitsings")
 
 -- UI
 require("user.ui.dashboard")       -- Dashboard setup
