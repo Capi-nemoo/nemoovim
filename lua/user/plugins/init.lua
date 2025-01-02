@@ -70,6 +70,7 @@ packer.startup(function()
   }
 }
 
+-- live-server plugin for webs  
   use({
   'barrett-ruth/live-server.nvim',
   run = 'npm install -g live-server',
@@ -77,6 +78,14 @@ packer.startup(function()
     require('live-server').setup()
   end
 })
+
+use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require('gitsigns').setup()
+    end
+}
 
   -- Dashboard - Pagina "home"
   use {
