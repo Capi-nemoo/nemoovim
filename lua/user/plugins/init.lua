@@ -15,7 +15,7 @@ packer.startup(function()
   use 'wbthomason/packer.nvim'
 
 
-  -- Gruvbox - color Tema
+  -- gruvbox-material; - color Tema
   use {
     'sainnhe/gruvbox-material',
     config = function()
@@ -23,7 +23,7 @@ packer.startup(function()
     end
   }
 
-  -- Treesitter - resaltado de sintaxis avanzado
+  -- nvim-treesitter; - resaltado de sintaxis avanzado
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',  -- Actualiza luego de instalar
@@ -32,7 +32,7 @@ packer.startup(function()
     end
   }
 	
-  -- Nvim-tree - Explorador de archivos
+  -- nvim-tree; - Explorador de archivos
   use {
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons' }, -- Iconos opcionales para archivos
@@ -41,11 +41,12 @@ packer.startup(function()
    end
   }
 
+  --  nvim-lspconfig
   use {
   'neovim/nvim-lspconfig', -- Configuración básica para LSP
   }
 
-    -- lualine - Barra de estado personalizada
+    -- lualine; - Barra de estado personalizada
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- Iconos
@@ -54,13 +55,34 @@ packer.startup(function()
     end
   }
   
-   -- Telescope - búsqueda avanzada
+-- Telescope-fzf-native; Mejorado para búsqueda avanzada
   use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }  -- Dependencia
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
+    requires = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('telescope').setup {
+        extensions = {
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+          }
+        }
+      }
+      require('telescope').load_extension('fzf')
+    end
   }
 
-  --- Autocompletion paths
+-- vim-fugitive; Herramientas avanzadas para git
+use {
+  'tpope/vim-fugitive'
+}
+
+  --- nvim-cmp; Autocompletion paths
   use {
   'hrsh7th/nvim-cmp',
   requires = {
@@ -70,6 +92,7 @@ packer.startup(function()
   }
 }
 
+-- live-server.nvim; plugin for webs  
   use({
   'barrett-ruth/live-server.nvim',
 run = 'npm install -g live-server',
@@ -78,7 +101,16 @@ run = 'npm install -g live-server',
   end
 })
 
-  -- Dashboard - Pagina "home"
+-- gitsigns; Estado de git y resaltado de nuevas lineas
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require('gitsigns').setup()
+    end
+}
+
+  -- alpha-nvim; Dashboard - Pagina "home"
   use {
     'goolord/alpha-nvim',
     requires = {
@@ -91,4 +123,6 @@ run = 'npm install -g live-server',
 	require('user.ui.dashboard')
     end
 }
+
+
 end)
