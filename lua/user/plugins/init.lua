@@ -72,7 +72,7 @@ packer.startup(function()
 
   use({
   'barrett-ruth/live-server.nvim',
-  run = 'npm install -g live-server',
+run = 'npm install -g live-server',
   config = function()
     require('live-server').setup()
   end
