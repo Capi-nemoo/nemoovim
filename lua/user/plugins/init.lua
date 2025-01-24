@@ -6,123 +6,122 @@
 -- / ____/ / /_/ / /_/ / / / / (__  )  / /_/ /| |/ |/ / /_/ /
 --/_/   /_/\__,_/\__, /_/_/ /_/____/   \____/ |__/|__/\____/
 ----             /____/
-
--- initialize packer
+----------------------------------------------------------------------------------------------
+-- Initialize packer
 vim.cmd [[packadd packer.nvim]]
 local packer = require('packer')
 
 packer.startup(function()
-  use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim' -- Packer itself
 
+    -- Colorscheme
+    use {
+        'sainnhe/gruvbox-material',
+        config = function()
+            require('user.core.colorscheme')
+        end
+    }
 
-  -- gruvbox-material; - color Tema
-  use {
-    'sainnhe/gruvbox-material',
-    config = function()
-      require('user.core.colorscheme')  -- Carga la configuración del tema
-    end
-  }
+    -- Treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = function()
+            require('user.lsps.treesitter')
+        end
+    }
 
-  -- nvim-treesitter; - resaltado de sintaxis avanzado
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',  -- Actualiza luego de instalar
-    config = function()
-      require('user.plugins.treesitter')  -- config file en el directorio
-    end
-  }
-	
-  -- nvim-tree; - Explorador de archivos
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = { 'nvim-tree/nvim-web-devicons' }, -- Iconos opcionales para archivos
-    config = function()
-      require('user.plugins.nvim-tree')  -- Cargar la configuración de nvim-tree
-   end
-  }
+    -- File Explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('user.plugins.nvim-tree')
+        end
+    }
 
-  --  nvim-lspconfig
-  use {
-  'neovim/nvim-lspconfig', -- Configuración básica para LSP
-  }
+    -- LSP Configuration
+    use {
+        'neovim/nvim-lspconfig',
+        config = function()
+            require('user.lsps.lsp')
+        end
+    }
 
-    -- lualine; - Barra de estado personalizada
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- Iconos
-    config = function()
-      require('user.ui.lualine')    -- Cargar la config
-    end
-  }
-  
--- Telescope-fzf-native; Mejorado para búsqueda avanzada
-  use {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make',
-    requires = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-    config = function()
-      require('telescope').setup {
-        extensions = {
-          fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-          }
-        }
-      }
-      require('telescope').load_extension('fzf')
-    end
-  }
+    -- Statusline
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('user.ui.lualine')
+        end
+    }
 
--- vim-fugitive; Herramientas avanzadas para git
-use {
-  'tpope/vim-fugitive'
-}
+    -- Telescope and Extensions
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make',
+        requires = {
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/plenary.nvim',
+        },
+        config = function()
+            require('user.plugins.telescope')
+        end
+    }
 
-  --- nvim-cmp; Autocompletion paths
-  use {
-  'hrsh7th/nvim-cmp',
-  requires = {
-    'hrsh7th/cmp-path', -- Fuente para rutas
-    'hrsh7th/cmp-nvim-lsp', -- Fuente para LSP
-    'hrsh7th/cmp-buffer', -- Fuente para buffers
-  }
-}
+    -- Autocompletion
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+        },
+        config = function()
+            require('user.lsps.autocmds')
+        end
+    }
 
--- live-server.nvim; plugin for webs  
-  use({
-  'barrett-ruth/live-server.nvim',
-run = 'npm install -g live-server',
-  config = function()
-    require('live-server').setup()
-  end
-})
+    -- Git Tools
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('user.utils.git.gitsigns')
+        end
+    }
 
--- gitsigns; Estado de git y resaltado de nuevas lineas
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-        require('gitsigns').setup()
-    end
-}
+    use {
+        'tpope/vim-fugitive',
+        config = function()
+            require('user.utils.git.fugitive')
+        end
+    }
 
-  -- alpha-nvim; Dashboard - Pagina "home"
-  use {
-    'goolord/alpha-nvim',
-    requires = {
-        'nvim-tree/nvim-web-devicons',
-        'echasnovski/mini.icons',
-        'nvim-lua/plenary.nvim',
-    },
-    config = function ()
-	require'alpha'.setup(require'alpha.themes.dashboard'.config)
-	require('user.ui.dashboard')
-    end
-}
+    -- Live Server
+    use {
+        'barrett-ruth/live-server.nvim',
+        run = 'npm install -g live-server',
+        config = function()
+            require('live-server').setup()
+            require('user.utils.live-server')
+        end
+    }
 
-
+    -- Optional (disabled) plugins for dashboard
+    
+    use {
+        'goolord/alpha-nvim',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+            'echasnovski/mini.icons',
+            'nvim-lua/plenary.nvim',
+        },
+        config = function()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+            require('user.ui.dashboard')
+        end
+    }
+    --]]
 end)
