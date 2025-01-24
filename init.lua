@@ -21,11 +21,13 @@ require("user.lsps.treesitter") -- Any other specific plugin configurations
 require("user.lsps.lsp") -- Any other specific plugin configurations
 require("user.lsps.completion") -- Any other specific plugin configurations
 require("user.lsps.autocmds") -- Any other specific plugin configurations
+require("user.lsps.treesitter-textobjects")
+require("user.lsps.mason")
 
 --Utils
 require("user.utils.live-server") --node server for web dev
 require("user.utils.functions") --nose aunxd
---require("user.utils.dashboard_utils") -- utilities to display in the dashboard menu
+require("user.utils.dashboard_utils") -- utilities to display in the dashboard menu
 require("user.utils.commands") -- quick commands 
     --git
 require("user.utils.git.gitsigns") -- flags on new or deleted lines

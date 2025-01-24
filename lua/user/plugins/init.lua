@@ -7,12 +7,15 @@
 --/_/   /_/\__,_/\__, /_/_/ /_/____/   \____/ |__/|__/\____/
 ----             /____/
 ----------------------------------------------------------------------------------------------
+
 -- Initialize packer
 vim.cmd [[packadd packer.nvim]]
 local packer = require('packer')
 
 packer.startup(function()
     use 'wbthomason/packer.nvim' -- Packer itself
+
+---------------------------------------------------
 
     -- Colorscheme
     use {
@@ -21,6 +24,8 @@ packer.startup(function()
             require('user.core.colorscheme')
         end
     }
+
+---------------------------------------------------
 
     -- Treesitter
     use {
@@ -31,6 +36,19 @@ packer.startup(function()
         end
     }
 
+---------------------------------------------------
+
+  -- nvim-treesitter-textobjects
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('user.lsps.treesitter-textobjects')  -- Archivo de configuración específico
+    end
+  }
+
+---------------------------------------------------
+    
     -- File Explorer
     use {
         'nvim-tree/nvim-tree.lua',
@@ -40,6 +58,8 @@ packer.startup(function()
         end
     }
 
+---------------------------------------------------
+
     -- LSP Configuration
     use {
         'neovim/nvim-lspconfig',
@@ -47,6 +67,17 @@ packer.startup(function()
             require('user.lsps.lsp')
         end
     }
+
+---------------------------------------------------
+
+use {
+  'williamboman/mason.nvim',
+  config = function()
+    require('user.lsps.mason') -- External configuration file
+  end
+}
+
+---------------------------------------------------
 
     -- Statusline
     use {
@@ -56,6 +87,8 @@ packer.startup(function()
             require('user.ui.lualine')
         end
     }
+
+---------------------------------------------------
 
     -- Telescope and Extensions
     use {
@@ -70,6 +103,8 @@ packer.startup(function()
         end
     }
 
+---------------------------------------------------
+
     -- Autocompletion
     use {
         'hrsh7th/nvim-cmp',
@@ -82,6 +117,8 @@ packer.startup(function()
             require('user.lsps.autocmds')
         end
     }
+
+---------------------------------------------------
 
     -- Git Tools
     use {
@@ -99,6 +136,8 @@ packer.startup(function()
         end
     }
 
+---------------------------------------------------
+
     -- Live Server
     use {
         'barrett-ruth/live-server.nvim',
@@ -109,7 +148,9 @@ packer.startup(function()
         end
     }
 
-    -- Optional (disabled) plugins for dashboard
+---------------------------------------------------
+
+    -- Dashboard
     
     use {
         'goolord/alpha-nvim',
@@ -123,5 +164,5 @@ packer.startup(function()
             require('user.ui.dashboard')
         end
     }
-    --]]
+    
 end)

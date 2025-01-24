@@ -8,6 +8,6 @@ require('gitsigns').setup {
     },
     numhl = false, -- Resaltar números de línea
     linehl = false, -- Resaltar líneas completas
-    keymaps = {}, -- Mapas de teclas para Git actions
+--    keymaps = {}, -- Mapas de teclas para Git actions
 }
 
