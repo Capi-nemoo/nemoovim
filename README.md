@@ -1,4 +1,3 @@
-# Aquí tienes un aviso para tu nueva rama en proceso de migración:
 ##  🚧 Work in Progress
 
 This branch is currently being ported to Lazy.nvim as the new package manager. Expect significant changes and improvements in the configuration.
