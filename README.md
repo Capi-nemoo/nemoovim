@@ -1,4 +1,3 @@
-# Here’s a message for your README that matches your request:
 ##   ⚠️ Deprecated Branch
 
 This branch is no longer maintained. We have migrated to Lazy.nvim as our package manager for improved performance and better maintainability.
