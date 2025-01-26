@@ -15,7 +15,7 @@ local packer = require('packer')
 packer.startup(function()
     use 'wbthomason/packer.nvim' -- Packer itself
 
----------------------------------------------------
+    ---------------------------------------------------
 
     -- Colorscheme
     use {
@@ -25,7 +25,7 @@ packer.startup(function()
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
 
     -- Treesitter
     use {
@@ -36,29 +36,29 @@ packer.startup(function()
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
 
-  -- nvim-treesitter-textobjects
-  use {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    requires = { 'nvim-treesitter/nvim-treesitter' },
-    config = function()
-      require('user.lsps.treesitter-textobjects')  -- Archivo de configuración específico
-    end
-  }
+    -- nvim-treesitter-textobjects
+    use {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('user.lsps.treesitter-textobjects')  -- Archivo de configuración específico
+        end
+    }
 
----------------------------------------------------
-    
+    ---------------------------------------------------
+
     -- File Explorer
     use {
         'nvim-tree/nvim-tree.lua',
         requires = { 'nvim-tree/nvim-web-devicons' },
         config = function()
-            require('user.plugins.nvim-tree')
+            require('user.navigation.nvim-tree')
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
 
     -- LSP Configuration
     use {
@@ -68,16 +68,16 @@ packer.startup(function()
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
 
-use {
-  'williamboman/mason.nvim',
-  config = function()
-    require('user.lsps.mason') -- External configuration file
-  end
-}
+    use {
+        'williamboman/mason.nvim',
+        config = function()
+            require('user.lsps.mason') -- External configuration file
+        end
+    }
 
----------------------------------------------------
+    ---------------------------------------------------
 
     -- Statusline
     use {
@@ -88,7 +88,7 @@ use {
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
 
     -- Telescope and Extensions
     use {
@@ -99,11 +99,11 @@ use {
             'nvim-lua/plenary.nvim',
         },
         config = function()
-            require('user.plugins.telescope')
+            require('user.navigation.telescope')
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
 
     -- Autocompletion
     use {
@@ -118,7 +118,7 @@ use {
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
 
     -- Git Tools
     use {
@@ -136,7 +136,7 @@ use {
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
 
     -- Live Server
     use {
@@ -148,10 +148,18 @@ use {
         end
     }
 
----------------------------------------------------
+    ---------------------------------------------------
+
+    use {
+        'ThePrimeagen/harpoon',
+        config = function()
+            require('user.navigation.harpoon')
+        end
+    }
+    ---------------------------------------------------
 
     -- Dashboard
-    
+
     use {
         'goolord/alpha-nvim',
         requires = {
@@ -164,5 +172,5 @@ use {
             require('user.ui.dashboard')
         end
     }
-    
+
 end)

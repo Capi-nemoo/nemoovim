@@ -8,15 +8,11 @@
 vim.g.mapleader = ' '  -- Leader key is Space
 vim.api.nvim_set_keymap('n', '<Space>', '<Nop>', { noremap = true, silent = true })  -- Disable Space default action
 
--- Use <leader>t to quickly open or close a terminal window.
-vim.api.nvim_set_keymap('n', '<leader>t', ':ToggleTerm<CR>', { noremap = true, silent = true })
-
 -- Clear search highlights
 vim.api.nvim_set_keymap('n', '<leader>nh', ':nohlsearch<CR>', { noremap = true, silent = true })  -- Clear search
 
--- Use Ctrl+s to save a file 
-vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------
+
 -- NAVIGATION
 -- Move between splits using <leader>h/j/k/l
 vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', { noremap = true, silent = true })  -- Move to the left split
@@ -25,23 +21,19 @@ vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', { noremap = true, silent = true })  -- Move to the right split
 
 ----------------------------------------------------------------------------------------------
+
 -- NVIM-TREE (PLUGIN)
 -- Open/close the file explorer
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })  -- Toggle NvimTree
+vim.api.nvim_set_keymap('n', '<leader>ef', ':NvimTreeToggle<CR>', { noremap = true, silent = true })  -- Toggle NvimTree
 
 ----------------------------------------------------------------------------------------------
+
 -- TELESCOPE (PLUGIN)
 -- Open Telescope to find files
 vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })  -- Find files
 
 -- Search for text within the project
 vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })  -- Search text
-
--- Search for recently opened files
-vim.api.nvim_set_keymap('n', '<leader>fr', ':Telescope oldfiles<CR>', { noremap = true, silent = true })  -- Recent files
-
--- List currently open buffers
-vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })  -- Open buffers
 
 ----------------------------------------------------------------------------------------------
 -- COMMENT TOGGLE (OPTIONAL PLUGIN)
@@ -51,5 +43,4 @@ vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', { noremap =
 -- vim.api.nvim_set_keymap('v', '<leader>/', ':CommentToggle<CR>gv', { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------
 
--- END OF CONFIGURATION
 
