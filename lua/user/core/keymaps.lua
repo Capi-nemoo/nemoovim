@@ -24,16 +24,16 @@ vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', { noremap = true, silent = t
 
 -- NVIM-TREE (PLUGIN)
 -- Open/close the file explorer
-vim.api.nvim_set_keymap('n', '<leader>ef', ':NvimTreeToggle<CR>', { noremap = true, silent = true })  -- Toggle NvimTree
+--vim.api.nvim_set_keymap('n', '<leader>ef', ':NvimTreeToggle<CR>', { noremap = true, silent = true })  -- Toggle NvimTree
 
 ----------------------------------------------------------------------------------------------
 
 -- TELESCOPE (PLUGIN)
 -- Open Telescope to find files
-vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })  -- Find files
+--vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })  -- Find files
 
 -- Search for text within the project
-vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })  -- Search text
+--vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })  -- Search text
 
 ----------------------------------------------------------------------------------------------
 -- COMMENT TOGGLE (OPTIONAL PLUGIN)
