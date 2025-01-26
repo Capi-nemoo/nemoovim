@@ -59,24 +59,9 @@ packer.startup(function()
     }
 
     ---------------------------------------------------
-
-    -- LSP Configuration
-    use {
-        'neovim/nvim-lspconfig',
-        config = function()
-            require('user.lsps.lsp')
-        end
-    }
-
+    ---lsp config iba aqui :(
     ---------------------------------------------------
-
-    use {
-        'williamboman/mason.nvim',
-        config = function()
-            require('user.lsps.mason') -- External configuration file
-        end
-    }
-
+    ---mason iba aqui :(
     ---------------------------------------------------
 
     -- Statusline
@@ -106,19 +91,8 @@ packer.startup(function()
     ---------------------------------------------------
 
     -- Autocompletion
-    use {
-        'hrsh7th/nvim-cmp',
-        requires = {
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-        },
-        config = function()
-            require('user.lsps.autocmds')
-        end
-    }
-
-    ---------------------------------------------------
+    -- cmp iba aqui  :(
+    -- ---------------------------------------------------
 
     -- Git Tools
     use {
