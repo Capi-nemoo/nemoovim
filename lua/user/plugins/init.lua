@@ -126,6 +126,8 @@ packer.startup(function()
 
     use {
         'ThePrimeagen/harpoon',
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} },
         config = function()
             require('user.navigation.harpoon')
         end

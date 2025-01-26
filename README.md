@@ -1,3 +1,15 @@
+# Here’s a message for your README that matches your request:
+##   ⚠️ Deprecated Branch
+
+This branch is no longer maintained. We have migrated to Lazy.nvim as our package manager for improved performance and better maintainability.
+
+For the latest updates and configuration, please check the main branch.
+
+fmicrosoft <3
+
+
+
+
 # Nemoovim
 
 This is my custom configuration for Neovim (Nemoovim). The Idea is to make it as modular and organized as I can.
