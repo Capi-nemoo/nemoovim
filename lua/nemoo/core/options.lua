@@ -1,3 +1,14 @@
+-- lua/nemoo/core/options 
+------------------------------------------------------------   
+--
+--  ▄▄▄  ▄▄▄▄    ■   ▄  ▄▄▄  ▄▄▄▄   ▄▄▄ 
+-- █   █ █   █ ▗▄▟▙▄▖▄ █   █ █   █ ▀▄▄  
+-- ▀▄▄▄▀ █▄▄▄▀   ▐▌  █ ▀▄▄▄▀ █   █ ▄▄▄▀ 
+--       █       ▐▌  █                  
+--       ▀       ▐▌                     
+--
+------------------------------------------------------------   
+--
 -- Enable line numbers for better code navigation
 vim.o.number = true  -- Show the current line number
 vim.o.relativenumber = true  -- Relative line numbers for easy movement
@@ -25,7 +36,6 @@ vim.o.undofile = true               -- Enable undo history persistence
 vim.o.undodir = vim.fn.stdpath('cache') .. '/undo' -- Directory to store undo files
 
 -- Performance improvements
-vim.o.lazyredraw = true  -- Redraw only when necessary
 vim.o.updatetime = 300   -- Faster completion (default is 4000ms)
 vim.o.timeoutlen = 500   -- Faster mapping timeout (default is 1000ms)
 

@@ -53,3 +53,30 @@ fmicrosoft
 │           └── statusline.lua
 └── README.md
 ```
+
+plugins working 
+windwp/nvim-autopairs
+tpope/vim-commentary
+tpope/vim-surround
+tpope/vim-fugitive
+lewis6991/gitsigns.nvim
+sindrets/diffview.nvim
+hrsh7th/nvim-cmp
+lvimuser/lsp-inlayhints.nvim
+onsails/lspkind.nvim
+neovim/nvim-lspconfig
+williamboman/mason.nvim
+simrat39/symbols-outline.nvim
+nvim-treesitter/nvim-treesitter
+stevearc/aerial.nvim
+ThePrimeagen/harpoon
+nvim-neo-tree/neo-tree.nvim
+nvim-telescope/telescope.nvim
+ThePrimeagen/vim-be-good
+barrett-ruth/live-server.nvim
+akinsho/toggleterm.nvim
+glepnir/dashboard-nvim
+nvim-lualine/lualine.nvim
+folke/noice.nvim
+rcarriga/nvim-notify
+rose-pine/neovim

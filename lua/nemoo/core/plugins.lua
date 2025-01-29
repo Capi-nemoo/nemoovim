@@ -1,9 +1,20 @@
+-- lua/nemoo/core/plugins.lua
+-- reference to all my plugins uwu 
+----------------------------------------------------------------------------------------------
+--    ____  __            _               __  __         __  __
+--   / __ \/ /_  ______ _(_)___  _____   / / / /      __/ / / /
+--  / /_/ / / / / / __ `/ / __ \/ ___/  / / / / | /| / / / / /
+-- / ____/ / /_/ / /_/ / / / / (__  )  / /_/ /| |/ |/ / /_/ /
+--/_/   /_/\__,_/\__, /_/_/ /_/____/   \____/ |__/|__/\____/
+----             /____/
+----------------------------------------------------------------------------------------------
+
 return {
   -- nvim-autopairs: Autopairs brackets
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
-  -- vim-commentary: Quick commenting
-  { "tpope/vim-commentary", event = "VeryLazy"},
+  -- Comment-nvim: Quick commenting
+  { "numToStr/Comment.nvim", event = "VeryLazy"},
 
   -- vim-fugitive: Git integration
   { "tpope/vim-fugitive", cmd = { "Git", "G" }, config = true },
