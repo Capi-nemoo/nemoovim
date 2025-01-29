@@ -6,9 +6,9 @@
 ------------------------------------------------------------------
 -- Core configuration files
 require("nemoo.core.options")  -- General settings
-require("nemoo.core.keymaps")  -- Key mappings
-
--- Load all plugins via Lazy.nvim
+require("nemoo.core.keymaps")  -- Key mapping 
+require("nemoo.core.autocmds")
+require("nemoo.core.options")
 require("nemoo.core.lazy")
 
 -- Navigation
