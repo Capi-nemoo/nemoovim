@@ -10,6 +10,8 @@ require("nemoo.core.keymaps")  -- Key mapping
 require("nemoo.core.autocmds")
 require("nemoo.core.options")
 require("nemoo.core.lazy")
+require("nemoo.plugins.lsp.lsp") -- Load LSP settingsrequire
+require("nemoo.plugins.lsp.cmp") -- Load Autocompletion settings
 
 -- Navigation
 --

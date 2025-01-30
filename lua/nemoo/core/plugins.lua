@@ -28,8 +28,6 @@ return {
   -- toggleterm.nvim: Toggleable terminal
   { "akinsho/toggleterm.nvim", version = "*", cmd = { "ToggleTerm", "TermExec" }, config = true },
 
-
-
  --        _ _   
  --       (_) |  
  --   __ _ _| |_ 
@@ -63,6 +61,8 @@ return {
   -- nvim-cmp: Autocompletion
   { "hrsh7th/nvim-cmp", event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "L3MON4D3/LuaSnip" }, config = true },
 
+  {"hrsh7th/cmp-nvim-lsp", lazy = true, config = true},
+
   -- mason.nvim: Manage LSP and tools
   { "williamboman/mason.nvim", cmd = "Mason", config = true },
 
@@ -91,7 +91,7 @@ return {
   { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline", config = true },
 
   -- aerial.nvim: Code outline window
-  { "stevearc/aerial.nvim", cmd = { "AerialToggle", "AerialOpen" }, config = true },
+--  { "stevearc/aerial.nvim", cmd = { "AerialToggle", "AerialOpen" }, config = true },
 
   -- neo-tree.nvim: Modern file explorer
   { "nvim-neo-tree/neo-tree.nvim", branch = "v3.x", dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" }, cmd = "Neotree", config = true },
