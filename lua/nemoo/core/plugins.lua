@@ -55,13 +55,14 @@ return {
  --       | |                                                                  | |                                 
  --       |_|                                                                  |_|                                 
  --
-  -- nvim-lspconfig: LSP configurations
+  -- nvim-lspconfig: LSP configurations 
   { "neovim/nvim-lspconfig", event = { "BufReadPre", "BufNewFile" }, config = true },
 
   -- nvim-cmp: Autocompletion
   { "hrsh7th/nvim-cmp", event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "L3MON4D3/LuaSnip" }, config = true },
 
-  {"hrsh7th/cmp-nvim-lsp", lazy = true, config = true},
+  -- cmp-nvim-lsp:
+  { "hrsh7th/cmp-nvim-lsp", lazy = true, config = true },
 
   -- mason.nvim: Manage LSP and tools
   { "williamboman/mason.nvim", cmd = "Mason", config = true },
