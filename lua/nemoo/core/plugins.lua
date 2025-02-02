@@ -109,6 +109,9 @@ return {
   -- rose-pine/neovim: Rose Pine colorscheme
   { "rose-pine/neovim", name = "rose-pine", lazy = false, priority = 1000, config = true },
 
+  --alpha-nvim: dashboard 
+  { 'goolord/alpha-nvim', dependencies = { 'nvim-tree/nvim-web-devicons', 'echasnovski/mini.icons', 'nvim-lua/plenary.nvim' } },
+
  --  _              _     
  -- | |            | |    
  -- | |_ ___   ___ | |___ 

@@ -7,11 +7,8 @@
 -- Core configuration files
 require("nemoo.core.options")  -- General settings
 require("nemoo.core.keymaps")  -- Key mapping 
-require("nemoo.core.autocmds")
 require("nemoo.core.options")
 require("nemoo.core.lazy")
-require("nemoo.plugins.lsp.lsp") -- Load LSP settingsrequire
-require("nemoo.plugins.lsp.cmp") -- Load Autocompletion settings
 
 -- Navigation
 --
@@ -36,7 +33,7 @@ require("nemoo.plugins.lsp.cmp") -- Load Autocompletion settings
 --
 --- UI
 --require("nemoo.ui.rose-pine")   -- Colorscheme settings
---require("nemoo.ui.dashboard")       -- Dashboard setup
+--require("nemoo.plugins.ui.dashboard")       -- Dashboard setup
 --require("nemoo.ui.colorscheme_picker")  --choose colorscheme from a curated list
 --require("nemoo.ui.statusline")      -- Statusline configuration
 --require("nemoo.ui.lualine") --line pretty 
