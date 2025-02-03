@@ -1,7 +1,4 @@
 --lua/nemoo/core/lazy
--- Bootstrap lazy.nvim 
--- reference to the plugins folders !
---
 -----------------------------------------
 --  __      __    ____  _  _ 
 -- (  )    /__\  (_   )( \/ )
@@ -13,7 +10,6 @@
 -- (____)(__)(__)(____) (__) 
 --
 --------------------------------------
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"

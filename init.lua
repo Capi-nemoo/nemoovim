@@ -5,10 +5,10 @@
 
 ------------------------------------------------------------------
 -- Core configuration files
-require("nemoo.core.options")  -- General settings
 require("nemoo.core.keymaps")  -- Key mapping 
-require("nemoo.core.options")
-require("nemoo.core.lazy")
+require("nemoo.core.options")  -- General settings
+require("nemoo.core.lazy")     -- Lazy bootstrap
+require("nemoo.core.autocmds") -- auto commands
 
 -- Navigation
 --
@@ -20,12 +20,10 @@ require("nemoo.core.lazy")
 --require("nemoo.lsps.treesitter") -- Any other specific plugin configurations
 --require("nemoo.lsps.lsp") -- Any other specific plugin configurations
 --require("nemoo.lsps.completion") -- Any other specific plugin configurations
---require("nemoo.lsps.autocmds") -- Any other specific plugin configurations
 --require("nemoo.lsps.treesitter-textobjects")
 --require("nemoo.lsps.mason")
 --
 ---Utils
---require("nemoo.utils.commentary") --node server for web dev
 --require("nemoo.utils.live-server") --node server for web dev
 --   --git
 --require("nemoo.utils.git.gitsigns") -- flags on new or deleted lines

@@ -18,6 +18,8 @@
 -- GENERAL CONFIGURATIONS
 -- Set <Space> as the leader key
 vim.g.mapleader = ' '  -- Leader key is Space
+vim.g.maplocalleader = ' ' 
+
 vim.api.nvim_set_keymap('n', '<Space>', '<Nop>', { noremap = true, silent = true })  -- Disable Space default action
 
 -- Clear search highlights
@@ -36,23 +38,18 @@ vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', { noremap = true, silent = t
 
 -- NVIM-TREE (PLUGIN)
 -- Open/close the file explorer
---vim.api.nvim_set_keymap('n', '<leader>ef', ':NvimTreeToggle<CR>', { noremap = true, silent = true })  -- Toggle NvimTree
+vim.api.nvim_set_keymap('n', '<leader>el', ':Neotree filesystem reveal right<CR>', { noremap = true, silent = true })  -- Toggle NvimTree right 
 
 ----------------------------------------------------------------------------------------------
 
 -- TELESCOPE (PLUGIN)
 -- Open Telescope to find files
---vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })  -- Find files
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })  -- Find files
 
 -- Search for text within the project
---vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })  -- Search text
+vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })  -- Search text
 
 ----------------------------------------------------------------------------------------------
--- COMMENT TOGGLE (OPTIONAL PLUGIN)
--- Uncomment this section if you have a comment plugin installed like `Comment.nvim`
--- Toggle comments in normal and visual modes
--- vim.api.nvim_set_keymap('n', '<leader>/', ':CommentToggle<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('v', '<leader>/', ':CommentToggle<CR>gv', { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------
 
 

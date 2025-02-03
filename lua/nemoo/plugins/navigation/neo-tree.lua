@@ -15,7 +15,7 @@ require('nvim-tree').setup {
   -- Ajustes del explorador
   view = {
     width = 30,              -- Ancho de la ventana del explorador
-    side = 'left',           -- Lado donde se abre el explorador
+    side = 'right',           -- Lado donde se abre el explorador
   },
   renderer = {
     icons = {
