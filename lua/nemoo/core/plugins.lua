@@ -8,7 +8,6 @@
 --/_/   /_/\__,_/\__, /_/_/ /_/____/   \____/ |__/|__/\____/
 ----             /____/
 ----------------------------------------------------------------------------------------------
-
 return {
  --                                 | |
  --   __ _  ___ _ __   ___ _ __ __ _| |
@@ -55,21 +54,6 @@ return {
  --       | |                                                                  | |                                 
  --       |_|                                                                  |_|                                 
  --
-  -- -- -- nvim-lspconfig: LSP configurations 
-  -- { "neovim/nvim-lspconfig", event = { "BufReadPre", "BufNewFile" }, config = true },
-  -- --
-  -- -- -- nvim-cmp: Autocompletion
-  -- { "hrsh7th/nvim-cmp", event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "L3MON4D3/LuaSnip" }, config = true },
-  -- --
-  -- -- cmp-nvim-lsp:
-  -- { "hrsh7th/cmp-nvim-lsp", lazy = true, config = true },
-  --
-  -- mason.nvim: Manage LSP and tools
-  { "williamboman/mason.nvim", cmd = "Mason" },
-
-  -- lsp-inlayhints.nvim: LSP inlay hints
-  { "lvimuser/lsp-inlayhints.nvim", event = "LspAttach" },
-
   -- lspkind.nvim: Icons for autocompletion
   { "onsails/lspkind.nvim", event = "VeryLazy" },
 
