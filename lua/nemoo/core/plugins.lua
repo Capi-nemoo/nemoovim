@@ -56,9 +56,9 @@ return {
  --
   -- lspkind.nvim: Icons for autocompletion
   { "onsails/lspkind.nvim", event = "VeryLazy" },
-
+ 
   -- nvim-treesitter: Better syntax highlighting
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = { "BufReadPost", "BufNewFile" } },
+   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = { "BufReadPost", "BufNewFile" }, config = true },
 
  --                    _             _   _             
  --                   (_)           | | (_)            
