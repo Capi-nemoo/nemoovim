@@ -27,5 +27,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 --plugins folder
-require("lazy").setup(require("nemoo.core.plugins"))
+require("lazy").setup("nemoo.plugins")
 
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])

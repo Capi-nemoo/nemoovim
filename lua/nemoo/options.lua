@@ -12,8 +12,8 @@ vim.o.relativenumber = true  -- Relative line numbers for easy movement
 
 -- Set indentation settings --------------------------------
 vim.o.expandtab = true  -- Use spaces instead of tabs
-vim.o.shiftwidth = 4    -- Number of spaces for each indentation level
-vim.o.tabstop = 4       -- Number of spaces per tab
+vim.o.shiftwidth = 2    -- Number of spaces for each indentation level
+vim.o.tabstop = 2       -- Number of spaces per tab
 vim.o.smartindent = true -- Enable smart indentation based on syntax
 
 -- Better user experience settings --------------------------
