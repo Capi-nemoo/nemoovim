@@ -6,12 +6,15 @@ return {
 	opts = function()
 		local dashboard = require("alpha.themes.dashboard")
 		local logo = [[
-    ███╗   ██╗███████╗███╗   ███╗ ██████╗  ██████╗   ██╗   ██╗██╗███╗   ███╗,
-    ████╗  ██║██╔════╝████╗ ████║██╔═══██╗██╔═══██╗  ██║   ██║██║████╗ ████║,
-    ██╔██╗ ██║█████╗  ██╔████╔██║██║   ██║██║   ██║  ██║   ██║██║██╔████╔██║,
-    ██║╚██╗██║██╔══╝  ██║╚██╔╝██║██║   ██║██║   ██║  ███  ███║██║██║╚██╔╝██║,
-    ██║ ╚████║███████╗██║ ╚═╝ ██║╚██████╔╝╚██████╔╝  ╚██████╔╝██║██║ ╚═╝ ██║,
-    ╚═╝  ╚═══╝╚══════╝╚═╝     ╚═╝ ╚═════╝  ╚═════╝    ╚═██══╝ ╚═╝╚═╝     ╚═╝,
+    xs
+    ███╗   ██╗███████╗███╗   ███╗ ██████╗  ██████╗   ██╗   ██╗██╗███╗   ███╗
+    ████╗  ██║██╔════╝████╗ ████║██╔═══██╗██╔═══██╗  ██║   ██║██║████╗ ████║
+    ██╔██╗ ██║█████╗  ██╔████╔██║██║   ██║██║   ██║  ██║   ██║██║██╔████╔██║
+    ██║╚██╗██║██╔══╝  ██║╚██╔╝██║██║   ██║██║   ██║  ███  ███║██║██║╚██╔╝██║
+    ██║ ╚████║███████╗██║ ╚═╝ ██║╚██████╔╝╚██████╔╝  ╚██████╔╝██║██║ ╚═╝ ██║
+    ╚═╝  ╚═══╝╚══════╝╚═╝     ╚═╝ ╚═════╝  ╚═════╝    ╚═██══╝ ╚═╝╚═╝     ╚═╝
+
+
     ]]
 
 		dashboard.section.header.val = vim.split(logo, "\n")
@@ -25,7 +28,7 @@ return {
 				"<cmd>lua require('telescope.builtin').find_files({ cwd = '~/repos', prompt_title = 'Git Repositories', find_command = { 'find', '.', '-mindepth', '1', '-maxdepth', '1', '-type', 'd', '-exec', 'test', '-e', '{}/.git', ';', '-print' } })<CR>"
 			),
 			dashboard.button("s", "⚙️  Settings", "<cmd>Telescope find_files<CR>"),
-			dashboard.button("u", "  Update plugins", "<cmd>PackerSync<CR>"),
+			dashboard.button("u", "  Package Manager(lazy)", "<cmd>Lazy<CR>"),
 			dashboard.button("c", "  Check Heath", "<cmd>checkhealth<CR>"),
 			dashboard.button("q", "󰩈  Quit", "<cmd>qa<CR>"),
 		}
