@@ -8,4 +8,4 @@
 require("nemoo.options")
 require("nemoo.keymaps")
 require("nemoo.autocmds")
-require("nemoo.lazy")     -- Lazy bootstrap
+require("nemoo.lazy") -- Lazy bootstrap
