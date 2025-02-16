@@ -18,6 +18,7 @@ return {
     ]]
 
 		dashboard.section.header.val = vim.split(logo, "\n")
+
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  New file", "<cmd>ene <BAR> startinsert <CR>"),
 			dashboard.button("f", "󰮗  Find file", "<cmd>Telescope find_files<CR>"),
@@ -43,7 +44,6 @@ return {
 		return dashboard
 	end,
 	config = function(_, dashboard)
-		-- close Lazy and re-open when the dashboard is ready
 		if vim.o.filetype == "lazy" then
 			vim.cmd.close()
 			vim.api.nvim_create_autocmd("User", {
@@ -59,7 +59,6 @@ return {
 
 		vim.api.nvim_create_autocmd("User", {
 			once = true,
-			pattern = "LazyVimStarted",
 			callback = function()
 				local stats = require("lazy").stats()
 				local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
